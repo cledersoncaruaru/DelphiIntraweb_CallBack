@@ -1,0 +1,58 @@
+unit uFrmDashBoard;
+interface
+uses
+
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, uBase, IWVCLComponent,
+  IWBaseLayoutComponent, IWBaseContainerLayout, IWContainerLayout,
+  IWTemplateProcessorHTML, IWVCLBaseControl, IWBaseControl, IWBaseHTMLControl,
+  IWControl, IWCompButton, IWCompLabel, IWCanvas, IWChartJS;
+type
+  TFrmDashBoard = class(TFrmBase)
+    procedure IWAppFormCreate(Sender: TObject);
+
+  private
+    { Private declarations }
+
+    procedure Meu_CallBack(EventParams: TStringList);
+
+
+
+  public
+    { Public declarations }
+  end;
+var
+  FrmDashBoard: TFrmDashBoard;
+implementation
+{$R *.dfm}
+
+
+
+procedure TFrmDashBoard.IWAppFormCreate(Sender: TObject);
+begin
+  inherited;
+
+
+
+  RegisterCallBack('nomequedeidocallback',Meu_CallBack);
+
+
+
+end;
+
+procedure TFrmDashBoard.Meu_CallBack(EventParams: TStringList);
+begin
+
+
+   if (EventParams.Values['meucallback']) = 'tag_que_eu_quero' then begin
+
+
+       var teste:string := 'opa';
+
+
+   end;
+
+
+end;
+
+end.
